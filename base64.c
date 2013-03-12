@@ -173,94 +173,92 @@ char* base64_encode(size_t* enclen, size_t len, unsigned char* data)
 			state = 0;
 			break;
 		}
-		if ((i + 1) == len) {
-			switch (state) {
-			case 1:
-				result[j++] = 'A';
-				result[j++] = '=';
-				result[j++] = '=';
-				break;
-			case 2:
-				result[j++] = 'Q';
-				result[j++] = '=';
-				result[j++] = '=';
-				break;
-			case 3:
-				result[j++] = 'g';
-				result[j++] = '=';
-				result[j++] = '=';
-				break;
-			case 4:
-				result[j++] = 'w';
-				result[j++] = '=';
-				result[j++] = '=';
-				break;
-			case 5:
-				result[j++] = 'A';
-				result[j++] = '=';
-				break;
-			case 6:
-				result[j++] = 'E';
-				result[j++] = '=';
-				break;
-			case 7:
-				result[j++] = 'I';
-				result[j++] = '=';
-				break;
-			case 8:
-				result[j++] = 'M';
-				result[j++] = '=';
-				break;
-			case 9:
-				result[j++] = 'Q';
-				result[j++] = '=';
-				break;
-			case 10:
-				result[j++] = 'U';
-				result[j++] = '=';
-				break;
-			case 11:
-				result[j++] = 'Y';
-				result[j++] = '=';
-				break;
-			case 12:
-				result[j++] = 'c';
-				result[j++] = '=';
-				break;
-			case 13:
-				result[j++] = 'g';
-				result[j++] = '=';
-				break;
-			case 14:
-				result[j++] = 'k';
-				result[j++] = '=';
-				break;
-			case 15:
-				result[j++] = 'o';
-				result[j++] = '=';
-				break;
-			case 16:
-				result[j++] = 's';
-				result[j++] = '=';
-				break;
-			case 17:
-				result[j++] = 'w';
-				result[j++] = '=';
-				break;
-			case 18:
-				result[j++] = '0';
-				result[j++] = '=';
-				break;
-			case 19:
-				result[j++] = '4';
-				result[j++] = '=';
-				break;
-			case 20:
-				result[j++] = '8';
-				result[j++] = '=';
-				break;
-			}
-		}
+	}
+	switch (state) {
+	case 1:
+		result[j++] = 'A';
+		result[j++] = '=';
+		result[j++] = '=';
+		break;
+	case 2:
+		result[j++] = 'Q';
+		result[j++] = '=';
+		result[j++] = '=';
+		break;
+	case 3:
+		result[j++] = 'g';
+		result[j++] = '=';
+		result[j++] = '=';
+		break;
+	case 4:
+		result[j++] = 'w';
+		result[j++] = '=';
+		result[j++] = '=';
+		break;
+	case 5:
+		result[j++] = 'A';
+		result[j++] = '=';
+		break;
+	case 6:
+		result[j++] = 'E';
+		result[j++] = '=';
+		break;
+	case 7:
+		result[j++] = 'I';
+		result[j++] = '=';
+		break;
+	case 8:
+		result[j++] = 'M';
+		result[j++] = '=';
+		break;
+	case 9:
+		result[j++] = 'Q';
+		result[j++] = '=';
+		break;
+	case 10:
+		result[j++] = 'U';
+		result[j++] = '=';
+		break;
+	case 11:
+		result[j++] = 'Y';
+		result[j++] = '=';
+		break;
+	case 12:
+		result[j++] = 'c';
+		result[j++] = '=';
+		break;
+	case 13:
+		result[j++] = 'g';
+		result[j++] = '=';
+		break;
+	case 14:
+		result[j++] = 'k';
+		result[j++] = '=';
+		break;
+	case 15:
+		result[j++] = 'o';
+		result[j++] = '=';
+		break;
+	case 16:
+		result[j++] = 's';
+		result[j++] = '=';
+		break;
+	case 17:
+		result[j++] = 'w';
+		result[j++] = '=';
+		break;
+	case 18:
+		result[j++] = '0';
+		result[j++] = '=';
+		break;
+	case 19:
+		result[j++] = '4';
+		result[j++] = '=';
+		break;
+	case 20:
+		result[j++] = '8';
+		result[j++] = '=';
+		break;
 	}
 
 	result[j++] = '\0';
