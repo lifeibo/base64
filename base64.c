@@ -43,6 +43,10 @@ char* base64_encode(size_t* enclen, size_t len, unsigned char* data)
 	size_t i = 0;
 	size_t j = 0;
 	char* result = (char*)malloc((4 * ceil(len / 3.0)) + 1);
+	if (result == NULL) {
+		*enclen = 0;
+		return (char*)NULL;
+	}
 
 	for (i = 0; i < len; i++) {
 		unsigned char c = data[i];
@@ -299,6 +303,10 @@ unsigned char* base64_decode(size_t* declen, size_t len, char* data)
 	}
 
 	result = (unsigned char*)malloc(reslen);
+	if (result == NULL) {
+		*declen = 0;
+		return (unsigned char*)NULL;
+	}
 
 	for (i = 0; i < reallen; i++) {
 		unsigned char c = low6_base64(data[i]);

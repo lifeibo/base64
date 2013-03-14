@@ -40,6 +40,8 @@ int main()
 		pass("Encoded message matches: \"%s\"", decmsg);
 	}
 
+	free(encmsg);
+	free(decmsg);
 	totals();
 	return 0;
 }
