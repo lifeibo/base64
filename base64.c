@@ -118,9 +118,9 @@ char* base64_encode(size_t* enclen, size_t len, unsigned char* data)
 			break;
 		case 11:
 			if (c < 0x80) {
-				result[j++] = (c >> 7) + 'Y';
+				result[j++] = (c >> 6) + 'Y';
 			} else {
-				result[j++] = (c >> 7) + 'a';
+				result[j++] = (c >> 6) - 2 + 'a';
 			}
 			result[j++] = base64_low6(c);
 			state = 0;
@@ -167,7 +167,7 @@ char* base64_encode(size_t* enclen, size_t len, unsigned char* data)
 			break;
 		case 20:
 			if (c < 0x80) {
-				result[j++] = (c >> 7) + '8';
+				result[j++] = (c >> 6) + '8';
 			} else if (c >= 0xC0) {
 				result[j++] = '/';
 			} else {
